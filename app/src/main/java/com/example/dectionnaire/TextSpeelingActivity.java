@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TextSpeelingActivity  extends AppCompatActivity implements View.OnClickListener {
     VideoView vid;
     MediaController m;
+    int video ;
+    int thumbnil ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +26,10 @@ public class TextSpeelingActivity  extends AppCompatActivity implements View.OnC
         Button btn_video = findViewById(R.id.videobutton);
         vid = (VideoView)findViewById(R.id.videoView);
         def.setText(getIntent().getStringExtra("wordDef"));
-        img.setImageResource(getIntent().getIntExtra("wordImage",0));
-      btn_video.setOnClickListener(this);
+        video =  getIntent().getIntExtra("video",R.raw.video);
+        thumbnil =  getIntent().getIntExtra("thumbnil",R.drawable.ic_launcher);
+        img.setImageResource(getIntent().getIntExtra("wordImage", R.drawable.ic_launcher));
+          btn_video.setOnClickListener(this);
 
 
     }
@@ -43,7 +47,7 @@ public class TextSpeelingActivity  extends AppCompatActivity implements View.OnC
         vid.setMediaController(m);
 
        // String path = "Users/Djallal/AndroidStudioProjects/tdm2/Dectionnaire/app/src/main/res/raw/v.mp4";
-        String path = "android.resource://com.example.dectionnaire/"+R.raw.video;
+        String path = "android.resource://com.example.dectionnaire/"+video;
 
         Uri u = Uri.parse(path);
 

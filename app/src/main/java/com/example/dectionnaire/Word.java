@@ -6,11 +6,13 @@ public class Word {
     private String definition;
     private  String description;
     private int image ;
+     int video ;
 
-    public Word( String word, String def,String des,int image){
+    public Word( String word, String def,String des,int image , int video){
         this.word= word;
         this.definition = def;
         this.description=des;
+this.video = video ;
         this.image=image;
     }
     public String getEngWord() {

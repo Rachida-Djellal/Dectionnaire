@@ -49,36 +49,36 @@ public class MainActivity extends AppCompatActivity implements ListViewAdapter.O
     private void initilizeList(){
 
         wordList.add( new Word("houce","nom féminin",
-                "La houce est un vêtement au Moyen Age qui ressemblait à une robe et qui se portait par-dessus les vêtements.",1));
+                "La houce est un vêtement au Moyen Age qui ressemblait à une robe et qui se portait par-dessus les vêtements.",1, R.raw.video));
         wordList.add( new Word("hospitalièrement","adverbe","De façon hospitalière, gratuite, généreuse, désintéressée.\n" +
                 "Exemple : Elle fut accueillie hospitalièrement.\n" +
-                "Traduction anglais : hospitably",2));
+                "Traduction anglais : hospitably",2 , R.raw.video));
 
         wordList.add( new Word("homme à tout faire","locution","Personne de sexe masculin capable de réaliser de nombreuses tâches " +
-                "dans des domaines variés, sans nécessairement être un spécialiste dans ces domaines.",3));
+                "dans des domaines variés, sans nécessairement être un spécialiste dans ces domaines.",3 , R.raw.video));
 
-        wordList.add( new Word("orgueil","nom masculin","Opinion trop avantageuse, estime exagérée de soi-même.",4));
+        wordList.add( new Word("orgueil","nom masculin","Opinion trop avantageuse, estime exagérée de soi-même.",4 , R.raw.video));
 
         wordList.add( new Word("carpe diem","locution","\n" +
                 "Jouir, profiter de l'instant présent. • Expression tirée des vers d'Horace," +
                 " un philosophe romain de l'Antiquité : \"Carpe diem, quam minimum credula postero\"." +
                 " Cela signifie \"cueille le jour sans te soucier du lendemain, et sois moins crédule pour " +
                 "le jour suivant\". Son sens," +
-                " proche de la philosophie épicurienne, a traversé les siècles jusqu'à nos jours sans qu'il soit altéré.",5));
+                " proche de la philosophie épicurienne, a traversé les siècles jusqu'à nos jours sans qu'il soit altéré.",5 , R.raw.video));
 
-        wordList.add( new Word("vanité","nom féminin","Orgueil, prétention, défaut d'une personne trop satisfaite d'elle-même.",6));
+        wordList.add( new Word("vanité","nom féminin","Orgueil, prétention, défaut d'une personne trop satisfaite d'elle-même.",6 , R.raw.video));
 
-        wordList.add( new Word("perspicace","adjectif","Être doté d'un esprit pénétrant et réfléchi, qui comprend rapidement et avec clairvoyance.",7));
+        wordList.add( new Word("perspicace","adjectif","Être doté d'un esprit pénétrant et réfléchi, qui comprend rapidement et avec clairvoyance.",7 , R.raw.video));
 
         wordList.add( new Word("narcissique","adjectif, nom","Relatif au narcissisme, " +
                 "à l'admiration de soi-même. Ce terme est issu de la mythologie grecque. " +
                 "Narcisse tombe amoureux de son propre reflet et meurt de cette passion qu'il" +
-                " ne peut assouvir. Près de son corps, poussent des fleurs blanches : les narcisses.",8));
+                " ne peut assouvir. Près de son corps, poussent des fleurs blanches : les narcisses.",8 , R.raw.video));
 
-        wordList.add( new Word("le cas échéant","locution","Si le cas se présente, à l'occasion, au besoin, si nécessaire...",9));
+        wordList.add( new Word("le cas échéant","locution","Si le cas se présente, à l'occasion, au besoin, si nécessaire...",9, R.raw.video));
 
         wordList.add( new Word("hypocrite","adjectif, nom","Qui relève de l'hypocrisie, qui dissimule ses sentiments, " +
-                "ses pensées, sa véritable personnalité, qui est fourbe et sournois.",10));
+                "ses pensées, sa véritable personnalité, qui est fourbe et sournois.",10, R.raw.video));
     }
 
 
@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements ListViewAdapter.O
     public void onClickListener(int position) {
         Intent intent = new Intent(getApplicationContext(),TextSpeelingActivity.class);
         intent.putExtra("wordDef", wordList.get(position).getDef());
+        intent.putExtra("viedo" , wordList.get(position).video);
+        intent.putExtra("thumbnil" , wordList.get(position).getImage());
         startActivity(intent);
 
     }
